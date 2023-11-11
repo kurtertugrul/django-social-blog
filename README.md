@@ -5,3 +5,4 @@
 
 
 ![2](https://github.com/kurtertugrul/django-social-blog/assets/141010070/5572007d-487b-4b1e-a966-e81d253857d1)
+![screencapture-127-0-0-1-8000-add-post-2023-11-11-15_01_46](https://github.com/kurtertugrul/django-social-blog/assets/141010070/25102e9e-b8ed-406f-b41a-dcec4cebe84c)
