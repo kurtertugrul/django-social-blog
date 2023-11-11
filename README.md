@@ -8,3 +8,4 @@
 ![screencapture-127-0-0-1-8000-add-post-2023-11-11-15_01_46](https://github.com/kurtertugrul/django-social-blog/assets/141010070/25102e9e-b8ed-406f-b41a-dcec4cebe84c)
 ![screencapture-127-0-0-1-8000-add-category-2023-11-11-15_02_47](https://github.com/kurtertugrul/django-social-blog/assets/141010070/09086251-fa49-4656-b801-69ac2654a18a)
 ![screencapture-127-0-0-1-8000-members-edit-profile-2023-11-11-15_03_32](https://github.com/kurtertugrul/django-social-blog/assets/141010070/84e88b52-2f39-4d20-94b4-ef8675feaeae)
+![screencapture-127-0-0-1-8000-members-1-edit-profile-page-2023-11-11-15_04_23](https://github.com/kurtertugrul/django-social-blog/assets/141010070/ac0283a0-57d4-445f-b7a3-7a47a0fd142f)
