@@ -1,5 +1,6 @@
 # django-social-blog
 
+![screencapture-127-0-0-1-8000-members-register-2023-11-11-15_06_16](https://github.com/kurtertugrul/django-social-blog/assets/141010070/416860ff-557d-48c0-9758-988c7a9ba44c)
 
 ![Ekran Alıntısı](https://github.com/kurtertugrul/django-social-blog/assets/141010070/b152b728-e906-43e7-979b-8ca067973b73)
 
