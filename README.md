@@ -1,5 +1,38 @@
 # django-social-blog
-This application provides a basic example of creating a blog website using various view classes and models offered by Django. Users can create, update, delete blog posts, leave comments, and perform liking and # #disliking actions. Additional features like categories, user profiles, and image uploads have been included.
+This blog application provides a platform for creating a website and sharing blog posts. As a regular user, here's a detailed explanation to help you understand and utilize its core functionality:
+
+Home Page:
+
+The first page you encounter is the application's homepage. Here, you can see a list of all blog posts. You can access new posts, their authors, and the category information.
+Blog posts are sorted in descending order of their post date, so you can check here to see the most recently updated or added posts.
+Categories:
+
+At the top of the homepage, there's a category menu that allows you to filter blog posts by categories. For example, you can select categories like "coding," "sports," and "entertainment" to access posts related to your interests.
+Blog Post Details:
+
+Clicking on a blog post takes you to a page displaying the details of that specific post. Here, you can see the post's title, author, content, and title tag.
+You can also see how many likes and dislikes the post has received. Like and dislike actions performed by you and other users are displayed on this page.
+Commenting:
+
+Beneath a blog post, you have the option to leave a comment about the post. You can enter your name and comment content to add a comment. The comments you add can be viewed by other users.
+Liking and Disliking Blog Posts:
+
+You can like or dislike a post. You can use the like and dislike buttons located below the post to perform these actions.
+Like and dislike statistics show how popular a post is.
+Adding a New Blog Post:
+
+Users can add a new blog post using the "Add Post" option. You can enter the title, title tag, content, category, summary, and add an image.
+After creating a new post, it can be viewed by other users.
+Updating an Existing Blog Post:
+
+You can edit or update your own posts using the "Edit" button. You can modify fields like title, title tag, and content.
+Deleting a Blog Post:
+
+To remove your own posts, you can use the "Delete" button. Keep in mind that the deletion process is irreversible, so exercise caution.
+Adding a Category:
+
+You can add new categories using the "Add Category" option. This can be useful for categorizing your posts into specific topics.
+This blog application utilizes a range of features provided by Django to create a fundamental blog website. It includes essential features such as blog posts, categories, comments, and liking/disliking functionalities. Additionally, it offers extra features like user profiles and image uploads. You can use this platform to create your own blog posts, share them, and leave comments on other users' posts.
 
 ![screencapture-127-0-0-1-8000-members-register-2023-11-11-15_06_16](https://github.com/kurtertugrul/django-social-blog/assets/141010070/416860ff-557d-48c0-9758-988c7a9ba44c)
 
