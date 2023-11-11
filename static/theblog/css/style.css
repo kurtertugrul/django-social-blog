@@ -1,0 +1,9 @@
+img {
+    max-width: 100%; /* Resmin maksimum genişliği sayfanın genişliğine oranlı olacak */
+    height: auto; /* Yüksekliği otomatik olarak ayarla, oran korunacak */
+  }
+  .resim-sinirla {
+    max-width: 100%;
+    height: auto;
+  }
+  

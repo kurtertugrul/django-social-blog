@@ -1,0 +1,157 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ post.title_tag }}{% endblock %}
+
+
+{% block content %}
+
+
+<h1>{{ post.title }} - {{ post.author.id }}</h1>
+By: <a href="{% url 'show_profile_page' post.author.profile.id %}">{{ post.author.first_name }} {{ post.author.last_name }}</a> - {{ post.post_date }} 
+    {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
+            <a href="{% url 'update_post' post.pk %}" class="btn btn-info">
+                Edit
+            </a>
+            <a href="{% url 'delete_post' post.pk %}" class="btn btn-danger">Delete</a></small><br/>
+        {% endif  %}
+    {% endif %}
+
+<hr>
+<br/>
+    {% if post.header_image %}
+        <img src="{{ post.header_image.url }}" width="380" height="400" class="resim-sinirla">
+    {% endif %} 
+<br><br>
+    <h5>{{ post.body|safe }}</h5>
+
+<br><br/>
+<!-- <a href="{% url 'home' %}" class="btn btn-secondary">Back</a> -->
+
+<br><br>
+<br>
+<hr>
+<div style="display: flex; justify-content: between;">
+        <form action="{% url 'like_post' post.pk %}" method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+                {% if liked %}
+                <button type="submit" name="post_id" value="{{ post.id }}" class="btn btn-light btn-sm like"><img src="/static/theblog/images/like_dolu.png" style="width: 24px; height: 24px;"></button>
+                {% else %}
+                <button type="submit" name="post_id" value="{{ post.id }}" class="btn btn-light btn-sm liked"><img src="/static/theblog/images/thumbs-up.svg"></button>
+                {% endif %}
+            {% else %}
+                You Want to Like,
+                <a href="{% url 'login' %}"> Please Login </a>
+            {% endif %}
+        </form>
+
+        <form action="{% url 'dislike_post' post.pk %}" method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+                {% if disliked %}
+                <button type="submit" name="post_id" value="{{ post.id }}" class="btn btn-light btn-sm dislike"><img src="/static/theblog/images/dislike_dolu.png" style="width: 24px; height: 24px;"></button>
+                {% else %}
+                <button type="submit" name="post_id" value="{{ post.id }}" class="btn btn-light btn-sm disliked"><img src="/static/theblog/images/thumbsdown.svg"></button>
+                {% endif %}
+            {% else %}
+                You Want to Dislike,
+                <a href="{% url 'login' %}"> Please Login </a>
+            {% endif %}
+        </form>
+    </div>
+
+{{ total_likes }} Likes
+{{ total_dislikes }} Dislikes
+
+
+
+    <br><br>
+    <div class="card mb-3">
+        <div class="row g-0">
+        <div class="col-md-2">
+        {% if post.author.profile.profile_pic %}
+            <img src="{{ post.author.profile.profile_pic.url }}"  width="380" height="400" class="resim-sinirla">
+
+        {% else %}
+            <img src="{% static '/theblog/images/default.png' %}"  width="380" height="400" class="resim-sinirla">
+        {% endif %}
+        </div>
+        <div class="col-md-10">
+            <div class="card-body">
+            <h5 class="card-title">
+                {{ post.author.first_name }} 
+                {{ post.author.last_name }}
+            </h5>
+    <p class="small text-muted">
+
+        <a href="{% url 'show_profile_page' post.author.profile.id %}">Profile Page</a>
+
+        {% if post.author.profile.website_url %}
+            | <a href="{{ post.author.profile.website_url }}">Website</a>
+        {% endif %}
+
+        {% if post.author.profile.facebook_url %}
+            | <a href="{{ post.author.profile.facebook_url }}">
+            Facebook
+            </a> 
+        {% endif %}
+
+        {% if post.author.profile.x_url %}
+            | <a href="{{ post.author.profile.x_url }}">
+                X
+            </a> 
+        {% endif %}
+
+        {% if post.author.profile.instagram_url %}
+            | <a href="{{ post.author.profile.instagram_url }}">
+                Instagram
+            </a>
+        {% endif %}
+    
+        {% if post.author.profile.linkedin_url %}
+            | <a href="{{ post.author.profile.linkedin_url }}">
+                Linkedin
+            </a>
+        {% endif %}
+    </p>
+            <p class="card-text">
+                <h5>{{ post.author.profile.bio }}</h5>
+            </p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <br><br>
+    <hr>
+
+    <h2>Comments</h2>
+    <br>
+    {% if not post.comments.all %}
+        No Comments Yet... <a href="{% url 'add_comment' post.pk %}">Add One</a>
+    {% else %}
+    <a href="{% url 'add_comment' post.pk %}">
+        Add Comment
+    </a>
+    <br><br>
+        {% for comment in post.comments.all %}
+            <strong>    
+                {{ comment.name }} - {{ comment.date_added }}
+            </strong>
+            <br>
+            {{ comment.body }}
+            <br><br>
+            
+        {% endfor %}
+        <!-- <a href="{% url 'add_comment' post.pk %}">
+            Add Comment
+        </a> -->
+    {% endif %}
+    <br>
+
+    <br><br>
+    <link rel="stylesheet" href="/static/theblog/css/style.css">
+{% endblock %}
+
