@@ -1,3 +1,4 @@
 # django-social-blog
 
-![Uploading screencapture-127-0-0-1-8000-2023-11-11-14_57_59.png…]()
+
+![Ekran Alıntısı](https://github.com/kurtertugrul/django-social-blog/assets/141010070/b152b728-e906-43e7-979b-8ca067973b73)
